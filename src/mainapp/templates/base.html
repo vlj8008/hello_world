@@ -1,0 +1,22 @@
+{%load static%}
+
+<html lang="en" class="bg_img">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/layout.css'%}">
+</head>
+
+<header class="header-title">
+    {%include "navbar.html"%}
+    {%block header%}{%endblock%}
+</header>
+<body>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>

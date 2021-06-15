@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+
+{%block title%}Hello World Project{%endblock%}
+
+{%block header%} Profile Details{% endblock%}
+
+{% block content %}
+
+<div class="admin_panel">
+    <!--action = on submit send the form data to a file named ../details/ to process input-->
+    <form method="POST" id="thisForm" action="../details/">
+        <table>
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            {{ form.as_table }}
+        </table>
+        <div class="frmBtn_container">
+            <!--creates a button with Submit-->
+            <input type="submit">
+            <div class="frmBtn_container">
+                <!--pass in variable "form.pk" to the delete page.-->
+                <button class="btn"><a href="../{{ form.pk }}delete/">DELETE</a></button>
+                <button class="btn"><a href="{% url 'admin_console' %}">Cancel</a></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+{%endblock%}
