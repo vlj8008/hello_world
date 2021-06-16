@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{%block title%}Hello World Project{%endblock%}
+{% block title %}Hello World Project{% endblock %}
 
 {% block header %}Welcome to the Hello World project !{% endblock %}
 
@@ -12,16 +12,16 @@
             {% csrf_token %}
             <label for="menu_id">Select a name from the list to edit:</label>
             <select id = "menu_id" name="menu" onchange="top.location.href=this.options(this.selectedIndex).value;">
-            {% for profile in profiles %}
-            <option value="../{{profile.pk}}/details/"> {{ profile.first_name }}</option>
+            {% for profile in UserProfile %}
+                <option value="../{{profile.pk}}/details/"> {{ profile.first_name }}</option>
             {% endfor %}
             </select>
             <div class="fromBtn_container">
-                <a href=""><button type="button" class="btn">Create New Profile</button> </a>
+                <a href="{% url 'createRecord'%}"><button type="button" class="btn">Create New Profile</button> </a>
                 <a href="{% url 'home'%}"><button type="button" class="btn">Log out of Profile</button> </a>
             </div>
         </div>
     </form>
 </div>
 
-{%endblock%}
+{% endblock %}
