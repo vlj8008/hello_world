@@ -13,7 +13,7 @@ def admin_console(request):
 
 def details(request, pk):
     pk = int(pk)
-    item = get_object_or_404(Product, pk=pk)
+    item = get_object_or_404(UserProfile, pk=pk)
     form = UserProfileForm(data=request.POST or None, instance=item)
     # POST is request to the dB that server accepts data in form. This is when user
     # changes the fields in the product.
@@ -31,7 +31,7 @@ def details(request, pk):
 
 def delete(request, pk):
     pk = int(pk)
-    item = get_object_or_404(Product, pk=pk)
+    item = get_object_or_404(UserProfile, pk=pk)
     if request.method == 'POST':
         item.delete()
         return redirect('admin_console')

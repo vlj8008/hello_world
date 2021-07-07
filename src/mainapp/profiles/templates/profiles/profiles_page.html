@@ -11,8 +11,8 @@
         <div class = formObject>
             {% csrf_token %}
             <label for="menu_id">Select a name from the list to edit:</label>
-            <select id = "menu_id" name="menu" onchange="top.location.href=this.options(this.selectedIndex).value;">
-            {% for profile in UserProfile %}
+            <select id = "menu_id" name="menu" onchange="top.location.href=this.options[this.selectedIndex].value;">
+            {% for profile in profiles %}
                 <option value="../{{profile.pk}}/details/"> {{ profile.first_name }}</option>
             {% endfor %}
             </select>
