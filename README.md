@@ -1,5 +1,9 @@
-# "Hello World" django project
+# "Hello World" Django project
 
-I used the Django framework for this project.
+I used the Django framework for this project and have created one module of the overall web app.
 
-There are more features that I would like to implement to this project in the future such as
+The module allows members to create a profile for themselves or amend an existing one. 
+
+This project is still a work in progress. 
+
+
